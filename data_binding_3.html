@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <style>
+    input {
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body ng-app="myApp" ng-init="foobar=50">
+    <div ng-controller="HelloController">
+        <input type="range" ng-model="foobar">
+        <input type="range" ng-model="foobar">
+    </div>
+    <div ng-controller="HelloController">
+        <input type="range" ng-model="foobar">
+        <input type="range" ng-model="foobar">
+    </div>
+    <script>
+    var app = angular.module('myApp', []);
+
+    app.controller('HelloController', function($scope) {
+        $scope.ourRangeValue = 50;
+    });
+    </script>
+</body>
+
+</html>
