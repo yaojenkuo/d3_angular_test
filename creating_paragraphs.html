@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>D3: Creating paragraphs dynamically from data</title>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+    
+      var dataset = [ 5, 10, 15, 20, 25 ];
+      
+      d3.select("body").selectAll("p")
+        .data(dataset)
+        .enter()
+        .append("p")
+        .text(function(d){
+          return "I can count up to " + d;
+        })
+        .style("color", function(d){
+          if (d > 20){
+            return "red";
+          } else {
+            return "blue";
+          }
+        });
+        //.text("New paragraph!");
+      
+    </script>
+  </body>
+</html>
